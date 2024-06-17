@@ -1,46 +1,59 @@
-// const displayGreating = document.getElementById("displayGreating")
+
+  const displaygreetingAdrian = document.getElementById('displayGreeting');
+  const additionalGreatings = document.getElementById('additionalGreatings');
+
+  function greetingAdrian(greet, name) {
+    // Create the message
+    const message = `${greet}, ${name}`;
+
+    // Display the greetingAdrian message in the displaygreetingAdrian element
+    displaygreetingAdrian.textContent = message;
+
+    // Create a new message element
+    const newMessageElement = document.createElement("div");
+    newMessageElement.textContent = message;
+
+    // Add the new message element to the additionalGreatings container
+    additionalGreatings.appendChild(newMessageElement);
+  }
+
  
-// function greeting(greet,name){
-//   displayGreating.textContent= `${greet},${name}`
-//     console.log(greeting+" "+name)
-// }
-// function test(firstName,LastName)
-// {const adriancaracter = newCaracker(adrian,hindenes)
+function Person(greet, name) {
+  this.greet = greet;
+  this.name = name;
 
-// this.firstName = firstName
-// this.LastName = LastName
-// console.log(test)
-// greeting("good morning","adrian")
-// greeting("good night","adrian")}
+  this.greetingAdrian = function() {
+    // Create the message
+    const message = `${this.greet}, ${this.name}`;
 
+    // Display the greeting message in the displaygreetingAdrian element
+    displaygreetingAdrian.textContent = message;
 
-const additionalGreatings = document.getElementById("additionalGreatings");
+    // Create a new message element
+    const newMessageElement = document.createElement("div");
+    newMessageElement.textContent = message;
 
-function greeting(greet, name) {
-  const message = `${greet}, ${name}`;
-  displayGreating.textContent = message;
-  // Legg til meldingen i additionalGreatings
-  const newMessageElement = document.createElement("div");
-  newMessageElement.textContent = message;
-  additionalGreatings.appendChild(newMessageElement);
-  
-
-//   this.firstName = firstName;
-//   this.lastName = lastName;
-//   test("adrian","hindenes")
-
-  
- 
-// greeting("Good morning");
-//   greeting("Good night");
-const person1 = new test("Adrian", "Hindenes");
-
-// Display last name greetings
-greeting("Good morning", person1.lastName);
-greeting("Good night", person1.lastName);
-
+    // Add the new message element to the additionalGreatings container
+    additionalGreatings.appendChild(newMessageElement);
+  };
 }
 
-// Test the function
-greeting("Adrian"+""+"Hindenes");
-nonsol.log(person1)
+// Create a new person object
+const person1 = new Person("hei", "Adrian");
+
+// Use the greeting method
+person1.greetingAdrian(); // Displays "hei, Adrian"
+
+// Create more greetings
+const person2 = new Person("Good morning", "Adrian");
+person2.greetingAdrian(); // Displays "Good morning, Adrian"
+
+const person3 = new Person("Good night", "Adrian");
+person3.greetingAdrian(); // Displays "Good night, Adrian"
+
+// Example of creating a new message element
+const newMessageElementAdrian = document.createElement("div");
+newMessageElementAdrian.textContent = "Adrian Hindenes";
+additionalGreatings.appendChild(newMessageElementAdrian);
+
+console.log(person1);
