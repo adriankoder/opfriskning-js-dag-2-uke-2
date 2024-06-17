@@ -9,12 +9,16 @@ function greeting(greet,name) {
     newMessageElement.textContent = message}
 
 
-function greetAdrian(greet, name) {
-    const message = `${greet}, ${name}`;
-    const displaygreetingAdrian = document.createElement("div");
-    displaygreetingAdrian.textContent = message;
-    document.body.appendChild(displaygreetingAdrian);
-}
+    function greetAdrian(greet, name) {
+        this.greet = greet; // Lagrer greet og name i this for å bruke senere
+        this.name = name;
+    
+        const message = `${this.greet}, ${this.name}`;
+        const displaygreetingAdrian = document.createElement("div");
+        displaygreetingAdrian.textContent = message;
+        document.body.appendChild(displaygreetingAdrian);
+    }
+    
 
 // Initial greetings
 greeting("good morning", "Adrian");
