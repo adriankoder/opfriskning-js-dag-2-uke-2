@@ -1,25 +1,22 @@
-const displaygreetingAdrian = document.getElementById('displayGreeting');
-const additionalGreatings = document.getElementById('additionalGreatings');
+function test() {
+    this.firstname = "adrian"
+    this.lastname = "hindenes"
+}
 
-function greeting(greet,name) {
+function greeting(greet, name) {
     const message = `${greet}, ${name}`;
-    displaygreetingAdrian.textContent = message;
+    displayGreating.textContent = message;
 
-    const newMessageElement = document.createElement("div")
-    newMessageElement.textContent = message}
+    const newmessageelement = document.createElement("div");
+newmessageelement.textContent = message;
+additionalGreetings.appendChild(newmessageelement);
+}
+const displayGreating = document.getElementById("displayGreating");
+const additionalGreetings = document.createElement("div");
+document.body.appendChild(additionalGreetings);
 
-
-    function greetAdrian(greet, name) {
-        this.greet = greet; // Lagrer greet og name i this for å bruke senere
-        this.name = name;
-    
-        const message = `${this.greet}, ${this.name}`;
-        const displaygreetingAdrian = document.createElement("div");
-        displaygreetingAdrian.textContent = message;
-        document.body.appendChild(displaygreetingAdrian);
-    }
-    
-
-// Initial greetings
-greeting("good morning", "Adrian");
-greetAdrian("good night", "Adrian");
+const person1 = new test();
+greeting("Good morning", person1.lastname);
+greeting("Good night", person1.lastname);
+greeting("Hello", person1.firstname + " " + person1.lastname);
+console.log(person1);
